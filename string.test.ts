@@ -9,6 +9,7 @@ import {
   findMissingLetter,
   capitalizeFirstLetters_1,
   capitalizeFirstLetters_2,
+  areParenthesisBalanced,
 } from './string';
 
 test('Split "Vanilla JavaScript" results in ["Vanilla", "JavaScript"]', () => {
@@ -118,4 +119,20 @@ test("capitalizeFirstLetters_2('today is your lucky day')", () => {
   expect(capitalizeFirstLetters_2('today is your lucky day')).toMatch(
     /Today Is Your Lucky Day/
   );
+});
+
+test("areParenthesisBalanced('[()]{}{[()()]()}') returns true", () => {
+  expect(areParenthesisBalanced('[()]{}{[()()]()}')).toBe(true);
+});
+
+test("areParenthesisBalanced('[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]') returns true", () => {
+  expect(
+    areParenthesisBalanced(
+      '[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]'
+    )
+  ).toBe(true);
+});
+
+test("areParenthesisBalanced('({(()))}}') returns false", () => {
+  expect(areParenthesisBalanced('({(()))}}')).toBe(false);
 });

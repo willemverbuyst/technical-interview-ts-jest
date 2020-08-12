@@ -52,3 +52,14 @@ export const capitalizeFirstLetters_1 = (str: string): string =>
 // Solution 2 - regex
 export const capitalizeFirstLetters_2 = (str: string): string =>
   str.replace(/\b[a-z]/gi, (letter) => letter.toUpperCase());
+
+// Are the parantheses balanced?
+export const areParenthesisBalanced = (str: string): boolean =>
+  !str.split('').reduce((a, b) => {
+    if (b === '(' || b === '{' || b === '[') {
+      return ++a;
+    } else if (b === ')' || b === '}' || b === ']') {
+      return --a;
+    }
+    return a;
+  }, 0);
