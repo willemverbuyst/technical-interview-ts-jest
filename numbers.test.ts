@@ -1,4 +1,4 @@
-import { sumAll, reverseNumber } from './numbers';
+import { sumAll, reverseNumber, fizzBuzz } from './numbers';
 
 test('Sum all number between (including) 1 and 5', () => {
   expect(sumAll([1, 5])).toBe(15);
@@ -16,4 +16,29 @@ test('reverse number 3456', () => {
 
 test('reverse number 321', () => {
   expect(reverseNumber(321)).toBe(123);
+});
+
+test('fizzBuzz(15) ', () => {
+  expect(fizzBuzz(15)).toEqual([
+    1,
+    2,
+    'Fizz',
+    4,
+    'Buzz',
+    'Fizz',
+    7,
+    8,
+    'Fizz',
+    'Buzz',
+    11,
+    'Fizz',
+    13,
+    14,
+    'FizzBuzz',
+  ]);
+  expect(fizzBuzz(15)).toHaveLength(15);
+  expect(fizzBuzz(15)).toEqual(expect.not.arrayContaining([16, 17]));
+  expect(fizzBuzz(15)).toEqual(
+    expect.arrayContaining([1, 2, 'Fizz', 'Buzz', 'FizzBuzz'])
+  );
 });

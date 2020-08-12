@@ -13,3 +13,20 @@ export const sumAll = (arr: number[]): number => {
 // Reverse number - Traversy Media
 export const reverseNumber = (num: number): number =>
   parseInt(num.toString().split('').reverse().join('')) * Math.sign(num);
+
+// FizzBuzz - Traversy Media
+export const fizzBuzz = (num: number): (number | string)[] => {
+  let arr = [];
+  for (let i = 1; i <= num; i++) {
+    if (i % 15 === 0) {
+      arr.push('FizzBuzz');
+    } else if (i % 5 === 0) {
+      arr.push('Buzz');
+    } else if (i % 3 === 0) {
+      arr.push('Fizz');
+    } else {
+      arr.push(i);
+    }
+  }
+  return arr;
+};
