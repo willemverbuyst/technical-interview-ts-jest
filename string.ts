@@ -48,3 +48,7 @@ export const capitalizeFirstLetters_1 = (str: string): string =>
     .split(' ')
     .map((word) => word[0].toUpperCase() + word.substr(1))
     .join(' ');
+
+// Solution 2 - regex
+export const capitalizeFirstLetters_2 = (str: string): string =>
+  str.replace(/\b[a-z]/gi, (letter) => letter.toUpperCase());

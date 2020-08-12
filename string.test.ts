@@ -8,6 +8,7 @@ import {
   findMaxCharacters,
   findMissingLetter,
   capitalizeFirstLetters_1,
+  capitalizeFirstLetters_2,
 } from './string';
 
 test('Split "Vanilla JavaScript" results in ["Vanilla", "JavaScript"]', () => {
@@ -104,5 +105,17 @@ test("findMissingLetter('abcd') returns undefined", () => {
 test("capitalizeFirstLetters_1('I love javascript') returns 'I Love Javascript'", () => {
   expect(capitalizeFirstLetters_1('I love javascript')).toBe(
     'I Love Javascript'
+  );
+});
+
+test("capitalizeFirstLetters_2('today is your lucky day') returns 'Today Is Your Lucky Day'", () => {
+  expect(capitalizeFirstLetters_2('today is your lucky day')).toBe(
+    'Today Is Your Lucky Day'
+  );
+});
+
+test("capitalizeFirstLetters_2('today is your lucky day')", () => {
+  expect(capitalizeFirstLetters_2('today is your lucky day')).toMatch(
+    /Today Is Your Lucky Day/
   );
 });
