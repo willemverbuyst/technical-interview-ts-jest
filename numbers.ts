@@ -9,3 +9,7 @@ export const sumAll = (arr: number[]): number => {
   }
   return total;
 };
+
+// Reverse number - Traversy Media
+export const reverseNumber = (num: number): number =>
+  parseInt(num.toString().split('').reverse().join('')) * Math.sign(num);
