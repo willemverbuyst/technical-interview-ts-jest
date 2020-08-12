@@ -3,6 +3,7 @@ import {
   splitCharacters,
   reverseString_1,
   reverseString_2,
+  isPalindrome,
 } from './string';
 
 test('Split "Vanilla JavaScript" results in ["Vanilla", "JavaScript"]', () => {
@@ -46,4 +47,15 @@ test('reverseString_2 "Vanilla JavaScript" returns "tpircSavaJ allinaV"', () => 
 
 test('Length "Fiets" reverseString_2 "Fiets"', () => {
   expect(reverseString_2('Fiets').length).toBe('Fiets'.length);
+});
+
+test('isPalindrome "racecar" returns true', () => {
+  expect(isPalindrome('racecar')).toBe(true);
+});
+
+test('isPalindrome "ferrari" returns false', () => {
+  expect(isPalindrome('ferrari')).toBe(false);
+});
+test('isPalindrome "ferrari" returns false', () => {
+  expect(isPalindrome('ferrari')).toBe(false);
 });

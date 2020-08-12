@@ -12,3 +12,7 @@ export const reverseString_1 = (str: string): string =>
 // Solution 2 - Traversy Media
 export const reverseString_2 = (str: string): string =>
   str.split('').reduce((reversedString, char) => char + reversedString, '');
+
+// Validate palindrome - Traversy Media
+export const isPalindrome = (str: string): boolean =>
+  str === str.split('').reduce((revString, char) => char + revString);
