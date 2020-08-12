@@ -12,11 +12,11 @@ import {
   areParenthesisBalanced,
 } from './string';
 
-test('Split "Vanilla JavaScript" results in ["Vanilla", "JavaScript"]', () => {
+test('Split "Vanilla JavaScript"', () => {
   expect(splitString('Vanilla JavaScript')).toEqual(['Vanilla', 'JavaScript']);
 });
 
-test("splitCharacters 'Vanilla JavaScript' returns ['V', 'a', 'n', 'i', 'l','l', 'a', ' ', 'J', 'a', 'v', 'a', 'S', 'c', 'r', 'i', 'p', 't']", () => {
+test("splitCharacters 'Vanilla JavaScript'", () => {
   expect(splitCharacters('Vanilla JavaScript')).toEqual([
     'V',
     'a',
@@ -39,93 +39,79 @@ test("splitCharacters 'Vanilla JavaScript' returns ['V', 'a', 'n', 'i', 'l','l',
   ]);
 });
 
-test('reverseString_1 "Vanilla JavaScript" returns "tpircSavaJ allinaV"', () => {
+test('reverseString_1 "Vanilla JavaScript"', () => {
   expect(reverseString_1('Vanilla JavaScript')).toBe('tpircSavaJ allinaV');
+  expect(reverseString_1('Vanilla JavaScript')).not.toBe('tpircsavaj allinav');
+  expect(reverseString_1('Vanilla JavaScript').length).toBe(
+    'Vanilla JavaScript'.length
+  );
 });
 
-test('reverseString_2 "Vanilla JavaScript" returns "tpircSavaJ allinaV"', () => {
+test('reverseString_2 "Vanilla JavaScript"', () => {
   expect(reverseString_2('Vanilla JavaScript')).toBe('tpircSavaJ allinaV');
-});
-
-test('reverseString_2 "Vanilla JavaScript" returns "tpircSavaJ allinaV"', () => {
   expect(reverseString_2('Vanilla JavaScript')).not.toBe('tpircsavaj allinav');
+  expect(reverseString_2('Vanilla JavaScript').length).toBe(
+    'Vanilla JavaScript'.length
+  );
 });
 
-test('Length "Fiets" reverseString_2 "Fiets"', () => {
-  expect(reverseString_2('Fiets').length).toBe('Fiets'.length);
-});
-
-test('isPalindrome "racecar" returns true', () => {
+test('isPalindrome "racecar"', () => {
   expect(isPalindrome_1('racecar')).toBe(true);
 });
 
-test('isPalindrome "ferrari" returns false', () => {
+test('isPalindrome "ferrari"', () => {
   expect(isPalindrome_1('ferrari')).toBe(false);
 });
 
-test('isPalindrome "ferrari" returns false', () => {
-  expect(isPalindrome_1('ferrari')).toBe(false);
-});
-
-test('isPalindrome "racecar" returns true', () => {
+test('isPalindrome "racecar"', () => {
   expect(isPalindrome_2('racecar')).toBe(true);
 });
 
-test('isPalindrome "ferrari" returns false', () => {
+test('isPalindrome "ferrari"', () => {
   expect(isPalindrome_2('ferrari')).toBe(false);
 });
 
-test('isPalindrome "ferrari" returns false', () => {
-  expect(isPalindrome_2('ferrari')).toBe(false);
-});
-
-test('findMaxCharacters("javascriptttt") returns t', () => {
+test('findMaxCharacters"javascriptttt"', () => {
   expect(findMaxCharacters('javascriptttt')).toBe('t');
 });
 
-test('findMaxCharacters("goooooood morning") returns o', () => {
+test('findMaxCharacters "goooooood morning"', () => {
   expect(findMaxCharacters('goooooood morning')).toBe('o');
-});
-
-test('findMaxCharacters() is defined', () => {
   expect(findMaxCharacters('goooooood morning')).toBeDefined();
 });
 
-test("findMissingLetter('abce') returns 'd'", () => {
+test("findMissingLetter 'abce'", () => {
   expect(findMissingLetter('abce')).toBe('d');
 });
 
-test("findMissingLetter('ghijklmnpqrstu') returns 'o'", () => {
+test("findMissingLetter 'ghijklmnpqrstu'", () => {
   expect(findMissingLetter('ghijklmnpqrstu')).toBe('o');
 });
 
-test("findMissingLetter('abcd') returns undefined", () => {
+test("findMissingLetter 'abcd'", () => {
   expect(findMissingLetter('abcd')).toBe(undefined);
 });
 
-test("capitalizeFirstLetters_1('I love javascript') returns 'I Love Javascript'", () => {
+test("capitalizeFirstLetters_1 'I love javascript'", () => {
   expect(capitalizeFirstLetters_1('I love javascript')).toBe(
     'I Love Javascript'
   );
 });
 
-test("capitalizeFirstLetters_2('today is your lucky day') returns 'Today Is Your Lucky Day'", () => {
+test("capitalizeFirstLetters_2 'today is your lucky day'", () => {
   expect(capitalizeFirstLetters_2('today is your lucky day')).toBe(
     'Today Is Your Lucky Day'
   );
-});
-
-test("capitalizeFirstLetters_2('today is your lucky day')", () => {
   expect(capitalizeFirstLetters_2('today is your lucky day')).toMatch(
     /Today Is Your Lucky Day/
   );
 });
 
-test("areParenthesisBalanced('[()]{}{[()()]()}') returns true", () => {
+test("areParenthesisBalance '[()]{}{[()()]()}'", () => {
   expect(areParenthesisBalanced('[()]{}{[()()]()}')).toBe(true);
 });
 
-test("areParenthesisBalanced('[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]') returns true", () => {
+test("areParenthesisBalanced '[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]'", () => {
   expect(
     areParenthesisBalanced(
       '[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]'
@@ -133,6 +119,6 @@ test("areParenthesisBalanced('[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({(
   ).toBe(true);
 });
 
-test("areParenthesisBalanced('({(()))}}') returns false", () => {
+test("areParenthesisBalanced '({(()))}}'", () => {
   expect(areParenthesisBalanced('({(()))}}')).toBe(false);
 });
