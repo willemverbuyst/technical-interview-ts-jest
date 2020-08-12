@@ -7,6 +7,7 @@ import {
   isPalindrome_2,
   findMaxCharacters,
   findMissingLetter,
+  capitalizeFirstLetters_1,
 } from './string';
 
 test('Split "Vanilla JavaScript" results in ["Vanilla", "JavaScript"]', () => {
@@ -98,4 +99,10 @@ test("findMissingLetter('ghijklmnpqrstu') returns 'o'", () => {
 
 test("findMissingLetter('abcd') returns undefined", () => {
   expect(findMissingLetter('abcd')).toBe(undefined);
+});
+
+test("capitalizeFirstLetters_1('I love javascript') returns 'I Love Javascript'", () => {
+  expect(capitalizeFirstLetters_1('I love javascript')).toBe(
+    'I Love Javascript'
+  );
 });

@@ -40,3 +40,11 @@ export const findMissingLetter = (str: string): string => {
     .filter((l) => str.indexOf(l) === -1);
   return letter;
 };
+
+// Capitalize first letters - Traversy Media
+// Solution 1
+export const capitalizeFirstLetters_1 = (str: string): string =>
+  str
+    .split(' ')
+    .map((word) => word[0].toUpperCase() + word.substr(1))
+    .join(' ');
