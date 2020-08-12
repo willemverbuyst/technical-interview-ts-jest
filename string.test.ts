@@ -6,6 +6,7 @@ import {
   isPalindrome_1,
   isPalindrome_2,
   findMaxCharacters,
+  findMissingLetter,
 } from './string';
 
 test('Split "Vanilla JavaScript" results in ["Vanilla", "JavaScript"]', () => {
@@ -85,4 +86,16 @@ test('findMaxCharacters("goooooood morning") returns o', () => {
 
 test('findMaxCharacters() is defined', () => {
   expect(findMaxCharacters('goooooood morning')).toBeDefined();
+});
+
+test("findMissingLetter('abce') returns 'd'", () => {
+  expect(findMissingLetter('abce')).toBe('d');
+});
+
+test("findMissingLetter('ghijklmnpqrstu') returns 'o'", () => {
+  expect(findMissingLetter('ghijklmnpqrstu')).toBe('o');
+});
+
+test("findMissingLetter('abcd') returns undefined", () => {
+  expect(findMissingLetter('abcd')).toBe(undefined);
 });
