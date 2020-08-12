@@ -5,6 +5,7 @@ import {
   reverseString_2,
   isPalindrome_1,
   isPalindrome_2,
+  findMaxCharacters,
 } from './string';
 
 test('Split "Vanilla JavaScript" results in ["Vanilla", "JavaScript"]', () => {
@@ -72,4 +73,16 @@ test('isPalindrome "ferrari" returns false', () => {
 
 test('isPalindrome "ferrari" returns false', () => {
   expect(isPalindrome_2('ferrari')).toBe(false);
+});
+
+test('findMaxCharacters("javascriptttt") returns t', () => {
+  expect(findMaxCharacters('javascriptttt')).toBe('t');
+});
+
+test('findMaxCharacters("goooooood morning") returns o', () => {
+  expect(findMaxCharacters('goooooood morning')).toBe('o');
+});
+
+test('findMaxCharacters() is defined', () => {
+  expect(findMaxCharacters('goooooood morning')).toBeDefined();
 });

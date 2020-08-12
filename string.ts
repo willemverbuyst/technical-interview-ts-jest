@@ -19,3 +19,11 @@ export const isPalindrome_1 = (str: string): boolean =>
 
 export const isPalindrome_2 = (str: string): boolean =>
   str === reverseString_1(str);
+
+export const findMaxCharacters = (str: string): string => {
+  const charObj: { [key: string]: number } = {};
+  str.split('').forEach((char) => (charObj[char] = (charObj[char] || 0) + 1));
+  return Object.keys(charObj).reduce((a, b) =>
+    charObj[a] > charObj[b] ? a : b
+  );
+};
