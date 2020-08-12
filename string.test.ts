@@ -1,4 +1,9 @@
-import { splitString, splitCharacters, reverseString_1 } from './string';
+import {
+  splitString,
+  splitCharacters,
+  reverseString_1,
+  reverseString_2,
+} from './string';
 
 test('Split "Vanilla JavaScript" results in ["Vanilla", "JavaScript"]', () => {
   expect(splitString('Vanilla JavaScript')).toEqual(['Vanilla', 'JavaScript']);
@@ -29,4 +34,12 @@ test("splitCharacters 'Vanilla JavaScript' returns ['V', 'a', 'n', 'i', 'l','l',
 
 test('reverseString_1 "Vanilla JavaScript" returns "tpircSavaJ allinaV"', () => {
   expect(reverseString_1('Vanilla JavaScript')).toBe('tpircSavaJ allinaV');
+});
+
+test('reverseString_2 "Vanilla JavaScript" returns "tpircSavaJ allinaV"', () => {
+  expect(reverseString_2('Vanilla JavaScript')).toBe('tpircSavaJ allinaV');
+});
+
+test('reverseString_2 "Vanilla JavaScript" returns "tpircSavaJ allinaV"', () => {
+  expect(reverseString_2('Vanilla JavaScript')).not.toBe('tpircsavaj allinav');
 });

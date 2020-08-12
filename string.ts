@@ -8,3 +8,7 @@ export const splitCharacters = (str: string): string[] => str.split('');
 // Solution 1
 export const reverseString_1 = (str: string): string =>
   str.split('').reverse().join('');
+
+// Solution 2 - Traversy Media
+export const reverseString_2 = (str: string): string =>
+  str.split('').reduce((reversedString, char) => char + reversedString, '');
