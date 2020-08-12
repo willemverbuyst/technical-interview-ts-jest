@@ -43,3 +43,7 @@ test('reverseString_2 "Vanilla JavaScript" returns "tpircSavaJ allinaV"', () => 
 test('reverseString_2 "Vanilla JavaScript" returns "tpircSavaJ allinaV"', () => {
   expect(reverseString_2('Vanilla JavaScript')).not.toBe('tpircsavaj allinav');
 });
+
+test('Length "Fiets" reverseString_2 "Fiets"', () => {
+  expect(reverseString_2('Fiets').length).toBe('Fiets'.length);
+});
