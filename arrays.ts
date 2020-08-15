@@ -31,3 +31,12 @@ export const pairDNA = (str: string): string[][] => {
   };
   return str.split('').map((l) => [l, DNApairs[l]]);
 };
+
+// Sort an array of objects, by value
+interface Person {
+  name: string;
+  age: number;
+  friends: number;
+}
+export const sortPersons = (arr: Person[], key: 'age' | 'friends') =>
+  arr.sort((a, b) => a[key] - b[key]);

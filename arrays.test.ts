@@ -4,6 +4,7 @@ import {
   removeElements,
   uniteUniqueElements,
   pairDNA,
+  sortPersons,
 } from './arrays';
 
 describe('getUniqueNumbers', () => {
@@ -67,5 +68,32 @@ describe('pairDNA', () => {
     ];
     expect(pairDNA(DNA)).toEqual(dnaPair);
     expect(pairDNA(DNA).length).toBe(dnaPair.length);
+  });
+});
+
+describe('sortPersons', () => {
+  test('(persons, "age") sorts object by age-property', () => {
+    const persons = [
+      {
+        name: 'Jack',
+        age: 23,
+        friends: 2,
+      },
+      {
+        name: 'Sifan',
+        age: 4,
+        friends: 5,
+      },
+      {
+        name: 'Hilary',
+        age: 104,
+        friends: 1,
+      },
+    ];
+    expect(sortPersons(persons, 'age')).toEqual([
+      { name: 'Sifan', age: 4, friends: 5 },
+      { name: 'Jack', age: 23, friends: 2 },
+      { name: 'Hilary', age: 104, friends: 1 },
+    ]);
   });
 });
