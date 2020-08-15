@@ -2,6 +2,7 @@ import {
   getUniqueNumbers_1,
   getUniqueNumbers_2,
   removeElements,
+  uniteUniqueElements,
 } from './arrays';
 
 describe('getUniqueNumbers', () => {
@@ -42,5 +43,13 @@ describe('removeElements', () => {
     expect(removeElements([1, 2, 3, 4, 1, 2, 5, 3, 1, 4], 3, 4)).toHaveLength(
       6
     );
+  });
+});
+
+describe('uniteUniqueElements', () => {
+  test('[1, 3, "two"], [5, "two", 1, 4], ["two", 1]', () => {
+    expect(
+      uniteUniqueElements([1, 3, 'two'], [5, 'two', 1, 4], ['two', 1])
+    ).toEqual([1, 3, 'two', 5, 4]);
   });
 });

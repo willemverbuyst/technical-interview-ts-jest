@@ -15,3 +15,8 @@ export const getUniqueNumbers_2 = (arr1: number[], arr2: number[]): number[] =>
 export const removeElements = (arr: number[], ...args: number[]): number[] => {
   return arr.filter((el) => !args.includes(el));
 };
+
+// Unite arrays without duplicates
+export const uniteUniqueElements = (...args: any[]) => [
+  ...new Set(args.flat()),
+];
