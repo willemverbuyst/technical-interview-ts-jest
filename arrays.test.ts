@@ -1,4 +1,8 @@
-import { getUniqueNumbers_1, getUniqueElements_2 } from './arrays';
+import {
+  getUniqueNumbers_1,
+  getUniqueNumbers_2,
+  removeElements,
+} from './arrays';
 
 describe('getUniqueNumbers', () => {
   describe('getUniqueNumbers_1', () => {
@@ -16,7 +20,7 @@ describe('getUniqueNumbers', () => {
   });
   describe('getUniqueNumbers_2', () => {
     test('[1, 2, 3, 4, 7] and [2, 3, 4, 5, 6]', () => {
-      expect(getUniqueNumbers_1([1, 2, 3, 4, 7], [2, 3, 4, 5, 6])).toEqual([
+      expect(getUniqueNumbers_2([1, 2, 3, 4, 7], [2, 3, 4, 5, 6])).toEqual([
         1,
         7,
         5,
@@ -24,7 +28,19 @@ describe('getUniqueNumbers', () => {
       ]);
     });
     test('[2, 3, 4] and [2, 3, 4]', () => {
-      expect(getUniqueNumbers_1([2, 3, 4], [2, 3, 4])).toEqual([]);
+      expect(getUniqueNumbers_2([2, 3, 4], [2, 3, 4])).toEqual([]);
     });
+  });
+});
+
+describe('removeElements', () => {
+  test('removeElements([1, 2, 3, 4, 1, 2, 5, 3, 1, 4], 3, 4))', () => {
+    const excluded = [3, 4];
+    expect(removeElements([1, 2, 3, 4, 1, 2, 5, 3, 1, 4], 3, 4)).toEqual(
+      expect.not.arrayContaining(excluded)
+    );
+    expect(removeElements([1, 2, 3, 4, 1, 2, 5, 3, 1, 4], 3, 4)).toHaveLength(
+      6
+    );
   });
 });
