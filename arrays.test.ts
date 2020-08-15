@@ -3,6 +3,7 @@ import {
   getUniqueNumbers_2,
   removeElements,
   uniteUniqueElements,
+  pairDNA,
 } from './arrays';
 
 describe('getUniqueNumbers', () => {
@@ -51,5 +52,20 @@ describe('uniteUniqueElements', () => {
     expect(
       uniteUniqueElements([1, 3, 'two'], [5, 'two', 1, 4], ['two', 1])
     ).toEqual([1, 3, 'two', 5, 4]);
+  });
+});
+
+describe('pairDNA', () => {
+  test('CTCTA', () => {
+    const DNA = 'CTCTA';
+    const dnaPair = [
+      ['C', 'G'],
+      ['T', 'A'],
+      ['C', 'G'],
+      ['T', 'A'],
+      ['A', 'T'],
+    ];
+    expect(pairDNA(DNA)).toEqual(dnaPair);
+    expect(pairDNA(DNA).length).toBe(dnaPair.length);
   });
 });

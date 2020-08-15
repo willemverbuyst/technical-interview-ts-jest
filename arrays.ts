@@ -20,3 +20,14 @@ export const removeElements = (arr: number[], ...args: number[]): number[] => {
 export const uniteUniqueElements = (...args: any[]) => [
   ...new Set(args.flat()),
 ];
+
+// Pair DNA - freeCodeCamp
+export const pairDNA = (str: string): string[][] => {
+  const DNApairs: { [key: string]: string } = {
+    A: 'T',
+    T: 'A',
+    C: 'G',
+    G: 'C',
+  };
+  return str.split('').map((l) => [l, DNApairs[l]]);
+};
