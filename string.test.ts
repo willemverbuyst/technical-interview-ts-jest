@@ -12,18 +12,18 @@ import {
   areParenthesisBalanced,
 } from './string';
 
+const str = 'Vanilla JavaScript';
 describe('splitString', () => {
   test('Vanilla JavaScript', () => {
-    expect(splitString('Vanilla JavaScript')).toEqual([
-      'Vanilla',
-      'JavaScript',
-    ]);
+    expect(splitString(str)).toEqual(['Vanilla', 'JavaScript']);
+    expect(splitString(str)).toContain('Vanilla');
+    expect(splitString(str)).not.toContain(str);
   });
 });
 
 describe('splitCharacters', () => {
   test('Vanilla JavaScript', () => {
-    expect(splitCharacters('Vanilla JavaScript')).toEqual([
+    expect(splitCharacters(str)).toEqual([
       'V',
       'a',
       'n',
@@ -43,31 +43,25 @@ describe('splitCharacters', () => {
       'p',
       't',
     ]);
+    expect(splitCharacters(str)).toContain('V');
+    expect(splitCharacters(str)).not.toContain(str);
   });
 });
 
 describe('reverseString', () => {
   describe('reverseString_1', () => {
     test('Vanilla JavaScript', () => {
-      expect(reverseString_1('Vanilla JavaScript')).toBe('tpircSavaJ allinaV');
-      expect(reverseString_1('Vanilla JavaScript')).not.toBe(
-        'tpircsavaj allinav'
-      );
-      expect(reverseString_1('Vanilla JavaScript').length).toBe(
-        'Vanilla JavaScript'.length
-      );
+      expect(reverseString_1(str)).toBe('tpircSavaJ allinaV');
+      expect(reverseString_1(str)).not.toBe('tpircsavaj allinav');
+      expect(reverseString_1(str).length).toBe(str.length);
     });
   });
 
   describe('reverseString_2', () => {
     test('Vanilla JavaScript', () => {
-      expect(reverseString_2('Vanilla JavaScript')).toBe('tpircSavaJ allinaV');
-      expect(reverseString_2('Vanilla JavaScript')).not.toBe(
-        'tpircsavaj allinav'
-      );
-      expect(reverseString_2('Vanilla JavaScript').length).toBe(
-        'Vanilla JavaScript'.length
-      );
+      expect(reverseString_2(str)).toBe('tpircSavaJ allinaV');
+      expect(reverseString_2(str)).not.toBe('tpircsavaj allinav');
+      expect(reverseString_2(str).length).toBe(str.length);
     });
   });
 });
