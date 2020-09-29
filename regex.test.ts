@@ -2,9 +2,10 @@ import {
   changeToSpinalCase,
   replaceWordInString,
   selectPhoneNumbersFromArray,
+  selectPhoneNumbersWithPattern,
 } from './regex';
 
-describe('changeToSpinalCase', () => {
+describe('#changeToSpinalCase', () => {
   test('is defined', () => {
     expect(changeToSpinalCase('hello')).toBeDefined();
   });
@@ -16,7 +17,7 @@ describe('changeToSpinalCase', () => {
   });
 });
 
-describe('replaceWordInString', () => {
+describe('#replaceWordInString', () => {
   test('A quick brown fox jumped over the lazy dog, jumped, leaped', () => {
     expect(
       replaceWordInString(
@@ -56,5 +57,23 @@ describe('#selectPhoneNumbersFromArray', () => {
         '013'
       )
     ).toEqual(['013-4563456', '013-0980998']);
+  });
+});
+
+describe('#selectPhoneNumbersWithPattern', () => {
+  test('returns only phone numbers with pattern 013-nnn-nnnn', () => {
+    expect(
+      selectPhoneNumbersWithPattern(
+        [
+          '013-456-3456',
+          '013-456-34567',
+          '013-098-0998',
+          '011-098-7654',
+          '013-098-a654',
+          '013-0-9654',
+        ],
+        /013-\d\d\d-\d\d\d\d$/
+      )
+    ).toEqual(['013-456-3456', '013-098-0998']);
   });
 });

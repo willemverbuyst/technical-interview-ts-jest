@@ -26,4 +26,16 @@ const selectPhoneNumbersFromArray = (
   return phoneNumbers.filter((phoneNumber) => regex.test(phoneNumber));
 };
 
-export { changeToSpinalCase, replaceWordInString, selectPhoneNumbersFromArray };
+const selectPhoneNumbersWithPattern = (
+  phoneNumbers: string[],
+  regex: RegExp
+): string[] => {
+  return phoneNumbers.filter((phoneNumber) => regex.test(phoneNumber));
+};
+
+export {
+  changeToSpinalCase,
+  replaceWordInString,
+  selectPhoneNumbersFromArray,
+  selectPhoneNumbersWithPattern,
+};
