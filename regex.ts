@@ -26,11 +26,4 @@ const selectPhoneNumbersFromArray = (
   return phoneNumbers.filter((phoneNumber) => regex.test(phoneNumber));
 };
 
-// console.log(
-//   selectPhoneNumbersFromArray(
-//     ['013-4563456', '013-0980998', '011-0987654'],
-//     '013'
-//   )
-// );
-
 export { changeToSpinalCase, replaceWordInString, selectPhoneNumbersFromArray };

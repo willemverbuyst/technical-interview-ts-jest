@@ -49,7 +49,7 @@ describe('replaceWordInString', () => {
 });
 
 describe('#selectPhoneNumbersFromArray', () => {
-  test('phone numbers with area code 013', () => {
+  test('returns only phone numbers with area code 013', () => {
     expect(
       selectPhoneNumbersFromArray(
         ['013-4563456', '013-0980998', '011-0987654'],
