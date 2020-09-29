@@ -1,4 +1,8 @@
-import { changeToSpinalCase, replaceWordInString } from './regex';
+import {
+  changeToSpinalCase,
+  replaceWordInString,
+  selectPhoneNumbersFromArray,
+} from './regex';
 
 describe('changeToSpinalCase', () => {
   test('is defined', () => {
@@ -41,5 +45,16 @@ describe('replaceWordInString', () => {
         'Tomorrow'
       )
     ).not.toBe('Today I will learn regular expressions');
+  });
+});
+
+describe('#selectPhoneNumbersFromArray', () => {
+  test('phone numbers with area code 013', () => {
+    expect(
+      selectPhoneNumbersFromArray(
+        ['013-4563456', '013-0980998', '011-0987654'],
+        '013'
+      )
+    ).toEqual(['013-4563456', '013-0980998']);
   });
 });
