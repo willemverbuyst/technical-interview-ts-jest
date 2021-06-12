@@ -10,7 +10,7 @@ import {
   capitalizeFirstLetters_1,
   capitalizeFirstLetters_2,
   areParenthesisBalanced,
-} from './string';
+} from './strings';
 
 const str = 'Vanilla JavaScript';
 describe('splitString', () => {
